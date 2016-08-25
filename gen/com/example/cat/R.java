@@ -43,8 +43,11 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
+        public static final int api_url=0x7f060007;
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060002;
+        public static final int host=0x7f060006;
+        public static final int schema=0x7f060008;
         public static final int speech_not_supported=0x7f060004;
         public static final int speech_prompt=0x7f060003;
         public static final int tap_on_mic=0x7f060005;
