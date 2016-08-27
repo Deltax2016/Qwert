@@ -22,6 +22,8 @@ import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,8 +42,11 @@ public class MainActivity extends Activity {
 	private HashMap<String, Integer> dictionary = new HashMap<String, Integer>();
     private TextView txtSpeechInput;
     private ImageButton btnSpeak;
+    private Button button1;
+    private EditText editText1;
     private final int REQ_CODE_SPEECH_INPUT = 100;
     static TextView tap_on_mic;
+    static String addr;
 	private static final String TAG = "Voice::MainActivity";
 
 
@@ -55,7 +60,8 @@ public class MainActivity extends Activity {
     
         txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
         btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
- 
+        button1 = (Button) findViewById(R.id.button1);
+        editText1 = (EditText) findViewById(R.id.editText1);
         // hide the action bar
         getActionBar().hide();
         
@@ -63,9 +69,17 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                promptSpeechInput();
+            	 promptSpeechInput();
             }
         });
+        button1.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			addr = editText1.getText().toString();
+				
+			}
+		});
         getApplicationContext();
         getResources();
     }
@@ -171,7 +185,7 @@ public class MainActivity extends Activity {
 
 				    String data = com.budka.network.Utils.Pack("LIGHT","1");
 					
-				    URL url = new URL("https://google.com");
+				    URL url = new URL(addr);
 					
 			        HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
 					

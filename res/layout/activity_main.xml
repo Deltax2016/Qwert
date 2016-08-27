@@ -42,5 +42,27 @@
             android:textSize="15dp"
             android:textStyle="normal" />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/txtSpeechInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Подключение" />
  
 </RelativeLayout>
